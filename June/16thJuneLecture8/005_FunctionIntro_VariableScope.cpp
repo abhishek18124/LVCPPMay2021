@@ -22,6 +22,15 @@ Summary : Functions and Variable Scope
 
 using namespace std;
 
+void print(int sum) {
+	cout << sum << endl;
+}
+
+void add(int a, int b) {
+	int sum = a + b;
+	print(sum);
+}
+
 
 int main() {
 
@@ -32,41 +41,19 @@ int main() {
 
 	// where can we use these variables ?
 	
-
-
-
-
-
-
-
-
-
-
-
-
 	// we can use them within the scope in which they are defined.
-
-	
-
 
 	// and we know, in C++, {} defines a scope
 
-
-
-
 	// ,and here {} is also the scope of the main function
 
-
-
 	// so I can say I can use these two variables anywhere in the main function
-
-
-
-
 
 	// To conclude, variables defined within a function can be only be used 
 
 	// in the scope of the function.
+
+	add(x, y);
 
 	return 0;
 }
