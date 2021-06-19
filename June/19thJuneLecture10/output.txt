@@ -1,0 +1,11 @@
+x = 514
+sizeof(x) = 4B
+&x = 0x7ffeef352918
+sizeof(&x) = 8B
+xptr = 0x7ffeef352918
+sizeof(xptr) = 8B
+*xptr = 514
+
+yptr = 
+sizeof(yptr) = 8B
+*yptr = 
