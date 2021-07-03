@@ -23,10 +23,53 @@ Constraint:
 using namespace std;
 
 void placeQueens(int QPos[], int n, int r) {
+	if(r == n) {
+		// for(int i=0; i<n; i++) {
+		// 	cout << QPos[i] << " ";
+		// }
+		// cout << endl;
+
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				if(QPos[i] == j) {
+					cout << "Q ";
+				} else {
+					cout << "_ "; 
+				}
+			}
+			cout << endl;
+		}
+
+		cout << endl;
+
+		return;
+	}
+
+	// I am at the rth row, trying to place the Qr
+	for(int j=0; j<n; j++) {
+		bool canPlace = true;
+
+		// Check if jth coln of row r is valid
+		for(int i=r-1; i>=0; i--) {
+			if(QPos[i]==j || QPos[i]==j+r-i || QPos[i] == j-r+i) {
+				canPlace = false;
+				break;
+			}
+		}
+
+		if(canPlace) {
+			QPos[r] = j;
+			placeQueens(QPos, n, r+1);
+		}
+	}
 }
 
 int main() {
 
+	int n = 4;
+	int QPos[4];
+
+	placeQueens(QPos, n, 0);
 
 	return 0;
 }
