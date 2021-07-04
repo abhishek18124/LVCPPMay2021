@@ -57,6 +57,7 @@ void solveSudoko(int grid[][9], int n, int i, int j) {
 
 	if(j == n) {
 		solveSudoko(grid, n, i+1, 0);
+		return;
 	}
 
 	if(grid[i][j] != 0) {
@@ -70,7 +71,7 @@ void solveSudoko(int grid[][9], int n, int i, int j) {
 			grid[i][j] = digit;
 			solveSudoko(grid, n, i, j+1);
 			// backtrack
-			// grid[i][j] = 0;
+			grid[i][j] = 0;
 		}
 	}
 
@@ -104,14 +105,14 @@ int main() {
 
 	solveSudoko(grid, n, 0, 0);
 
-	for(int i=0; i<n; i++) {
-		for(int j=0; j<n; j++) {
-			cout << grid[i][j] << " ";
-		}
-		cout << endl;
-	}
+	// for(int i=0; i<n; i++) {
+	// 	for(int j=0; j<n; j++) {
+	// 		cout << grid[i][j] << " ";
+	// 	}
+	// 	cout << endl;
+	// }
 
-	cout << endl;
+	// cout << endl;
 
 
 	return 0;
