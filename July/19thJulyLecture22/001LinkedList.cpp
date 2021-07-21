@@ -37,6 +37,7 @@ void insertAtHead(Node*& head, int data) {
     n->next = head; //  (*n).next = head; 
     // 3. reassign the head to new node
     head = n;
+    
 }
 
 Node* getNode(Node* head, int index) {
@@ -49,7 +50,7 @@ Node* getNode(Node* head, int index) {
     return head;
 }
 
-void insertAtIndex(Node*& head, int data, int index) {
+void insertAtIndex(Node*& head int data, int index) {
     if(index == 0) {
         insertAtHead(head, data);
         return;
@@ -148,6 +149,7 @@ void deleteFromTail(Node*& head) {
 int main() {
 
     Node* head = NULL;
+    Node* tail = NULL:
 
     insertAtHead(head, 5);
     insertAtHead(head, 4);
