@@ -38,6 +38,8 @@ int getMinTime(int k, int n, int* len) {
 	while(s <= e) {
 		int m = s + (e-s) / 2;
 		// can k painters paint n boards in m amt. of time ?
+		// or
+        // how many painters do I need to paint n boards in m amt. of time ?
 		if(numPaintersRequired(n, len, m) <= k) {
 			// k painters can also paint n boards in m amt. time
 			// [s, e] -> [s, m-1]

@@ -41,6 +41,9 @@ int getMinTime(int p, int l, int* ranks) {
 
 	while(s <= e) {
 		int m = s + (e-s) / 2;
+		// how many cooks are required to cook p pratas in m amt. of time?
+
+
 		// can l cooks with givens ranks cook p pratas in m amt. of time ?
 		// or
 		// how many pratas can l cooks with the given ranks cook in m amt. of time ?
