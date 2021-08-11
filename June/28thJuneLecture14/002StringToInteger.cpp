@@ -22,13 +22,14 @@ int stringToInteger(string str, int n) {
 
 int main() {
 
-	// char str[] = "456";
+	char str[] = "456";
 	string str = "456";
 	// int n = strlen(str);
 	int n = str.length();
 
 	int integer = stringToInteger(str, n); 
 	cout << integer << endl;
+
 	return 0;
 }
 
