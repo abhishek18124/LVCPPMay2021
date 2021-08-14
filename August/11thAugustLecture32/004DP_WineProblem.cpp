@@ -79,6 +79,36 @@ int maxProfitBottomUp(vector<int>& wines) {
 
 }
 
+// BottomUp Version 2, filling the matrix diagonal-wise
+
+void fill(vector<int>& wines, vector<vector<int>>& dp, int i, int j) {
+	int n = wines.size();
+	// to iterate over the diagonal starting at the  (i, j)th index, first compute the length of the diagonal
+	int len = n-j; 
+	for(int l=0; l<len; l++) {
+		dp[i+l][j+l] = max(len*wines[i+l] + dp[i+1+l][j+l],
+			               len*wines[j+l] + dp[i+l][j-1+l]);
+	}
+}
+
+int maxProfitBottomUpV2(vector<int>& wines) {
+	int n = wines.size();
+	vector<vector<int>> dp(n, vector<int>(n, 0));
+
+	// fill main diagonal
+	for(int i=0; i<n; i++) {
+		dp[i][i] = n*wines[i];
+	}
+
+	// fill remaining diagonals
+	for(int k=1; k<n; k++) {
+		// iterate over the kth diagonal starting from index (0, k)
+		fill(wines, dp, 0, k);
+	}
+
+	return dp[0][n-1];
+}
+
 
 int main() {
 
@@ -91,6 +121,7 @@ int main() {
 
 	cout << maxProfitTopDown(wines, 0, n-1, 1, dp) << endl;
 	cout << maxProfitBottomUp(wines) << endl;
-	
+	cout << maxProfitBottomUpV2(wines) << endl;
+
 	return 0;
 }

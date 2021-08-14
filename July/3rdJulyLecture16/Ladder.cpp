@@ -29,8 +29,7 @@ int numberOfWays(int n, int k, int i) {
 	int count = 0;
 	for(int j=1; j<=k; j++) {
 		if(i+j <= n) {
-			i = i + j;
-			count += numberOfWays(n, k, i);
+			count += numberOfWays(n, k, i+j);
 		}
 	}
 
