@@ -122,15 +122,15 @@ int main() {
 
 	node* root = NULL;
 
-	root = new node(10);
+	root = new node(1);
 	
-	root->left = new node(5);
-	root->left->left  = new node(3);
-	root->left->right = new node(7);
+	root->left = new node(1);
+	// root->left->left  = new node(3);
+	// root->left->right = new node(7);
 
-	root->right = new node(15);
-	root->right->left  = new node(13);
-	root->right->right = new node(17);
+	// root->right = new node(15);
+	// root->right->left  = new node(13);
+	// root->right->right = new node(17);
 
 	isBST(root) ? cout << "true" << endl : cout << "false" << endl;
 	isBSTEfficient(root).bst ? cout << "true" << endl : cout << "false" << endl;
