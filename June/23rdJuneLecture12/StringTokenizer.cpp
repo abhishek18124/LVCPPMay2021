@@ -9,6 +9,7 @@ of the characters that are part of delimiters.
 */
 
 #include<iostream>
+#include<cstring>
 
 using namespace std;
 
